@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+.sidebar {
+  flex: 0
+}
+
+.conteudo {
+  flex: 1;
+  background-color: #FDFDFD;
+}

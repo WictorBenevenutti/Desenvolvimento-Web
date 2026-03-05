@@ -1,0 +1,23 @@
+.conteudo * {
+    
+}
+
+.conteudo .titulo {
+    border-bottom-style: solid;
+    border-width: thin;
+    border-color: #444;;
+    height: 82px;
+    padding: 5px 16px;
+}
+
+.conteudo .titulo h1 {
+    padding: 0;
+    margin: 0;
+    text-align: top;
+}
+.conteudo .titulo h2 {
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    text-align: top;
+}

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <div id="sidebar"></div>
+    <p>asdas</p>
+
+    <script src="js/data/indicadores.js"></script>
+    <script src="js/components/sidebar.js"></script>
+    <script src="js/pages/home.js"></script>
+    <script>
+    document.getElementById("sidebar").innerHTML =
+      Sidebar(indicadores)
+    </script>  
+</body>
+</html>
