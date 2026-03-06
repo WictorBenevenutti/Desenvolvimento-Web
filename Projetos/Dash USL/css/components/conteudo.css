@@ -1,3 +1,47 @@
 .conteudo {
-    background-color: #FDFDFD
+    min-width: 300px;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 1px;
+    background-color: white;
+}
+
+.bloco {
+    margin: 40px 20px;
+    border-style: solid;
+    border-width: thin;
+    border-color: #BFBFBF;
+    border-radius: 20px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 0px;
+    min-height: 200px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bloco h1 {
+    padding: 10px;
+    background-color: rgba(22, 86, 40, 0.8);
+    font-weight: lighter;
+    color: white;
+    border-top-left-radius: 20px;
+}
+
+.bloco h2 {
+    padding: 10px;
+    margin-left: 50px;
+    font-weight: lighter;
+    text-align: left;
+}
+
+.itens {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item {
+    min-width: 180px;
+    max-width: 200px;
+    padding: 20px 0px;
+    margin: 20px auto;
 }

@@ -1,8 +1,10 @@
 .navbar {
-    height: 130px;
-    width: 100vw;
+    height: 100px;
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
     box-sizing: border-box;
-    background-image: linear-gradient(to bottom, rgba(31, 49, 85,0.8), rgb(31, 49, 85));
+    background-image: linear-gradient(to bottom, rgba(31, 49, 85,0.7), rgb(31, 49, 85));
 }
 
 .header {
