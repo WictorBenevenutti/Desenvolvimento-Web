@@ -1,0 +1,25 @@
+* {
+    margin: 0px;
+    padding: 0px;  
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: #F0F1F1;
+    background-image: url(/assets/fundorepeticao-espelhado.png), url(/assets/fundorepeticao.png);
+    background-repeat: repeat-y, repeat-y;
+    background-position: left 40px top 20px, right 40px top 40px;
+    background-size: 10% auto;
+}
+
+.conteudo {
+    min-width: 300px;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: white;
+}
