@@ -9,3 +9,13 @@ body {
   margin: 0;
   background-color: #F0F1F1
 }
+
+.conteudo {
+    min-width: 300px;
+    max-width: 1000px;
+    min-height: 100vh;
+    margin: auto;
+    padding-top: 1px;
+    padding-bottom: 1px;
+    background-color: white;
+}
