@@ -1,0 +1,397 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* --- ESTILOS GERAIS --- */
+body {
+  margin: 0;
+  padding: 0;
+  /* FUNDO EXTERNO: Cinza muito claro para emoldurar o catálogo */
+  background-color: #F4F4F4;
+  font-family: 'Playfair Display', Georgia, serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.container_principal {
+  max-width: 800px; /* Largura máxima maior para computadores */
+  width: 90%; /* Ocupa 90% da largura em telas menores que 800px */
+  margin: 10px auto; /* Centraliza horizontalmente e dá margem vertical */
+  padding: 0;
+  /* FUNDO DO CATÁLOGO: O Creme de Baunilha da marca */
+  background-color: #F8ECD2;
+  color: #2E2418;
+  box-shadow: 0 20px 50px rgba(0,0,0,0.1); /* Sombra para profundidade */
+  border-radius: 4px;
+  overflow: hidden;
+  border-top: 5px solid #C19A6B; /* Linha dourada no topo */
+}
+
+/* --- ESTILOS DE TEXTO E ELEMENTOS --- */
+h1, h2, h3 { 
+  margin: 0; 
+  font-weight: 400; 
+}
+
+p { 
+  margin: 0; 
+  font-weight: 300; 
+  line-height: 1.6; 
+}
+
+a { 
+  text-decoration: none; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+.cabecalho_catalogo {
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 1px solid rgba(46, 36, 24, 0.1);
+}
+
+.logo-img {
+  max-width: 150px;
+  margin-bottom: 25px;
+  border-radius: 50%;
+}
+
+.titulo_cabecalho {
+  font-size: 1.8em;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  font-family: 'Cinzel', serif;
+}
+
+.divisor_cabecalho {
+  width: 70px;
+  height: 1px;
+  background: #C19A6B;
+  margin: 25px auto;
+}
+
+.subtitulo_cabecalho {
+  font-style: italic;
+  opacity: 0.7;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+
+/* --- ÁREA DE CONTEÚDO (MAIN) --- */
+.corpo_catalogo {
+  padding: 50px 20px 20px 20px;
+}
+
+/* --- CARD DE PRODUTO --- */
+.cartao_produto {
+  display: flex; /* Layout padrão em linha para computadores */
+  background: #FFF;
+  border: 1px solid rgba(46, 36, 24, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  max-height: 350px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.02);
+  margin: 0 0 10px 0; /* Margem inferior entre os cards */
+}
+
+.cartão_foto {
+  flex: 1; /* Ocupa uma parte proporcional */
+  background: #E8DCC4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid rgba(46, 36, 24, 0.1);
+  padding: 20px;
+}
+
+.cartão_foto img {
+/*  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  object-position: center; */
+
+/* Forçamos a imagem a ocupar no máximo 100% da largura e altura do container,
+     mas ela pode ser menor se necessário para manter a proporção. */
+  max-width: 100%;
+  max-height: 100%;
+  
+  /* ESTA É A PROPRIEDADE CHAVE: 
+     Ela diz à imagem: "Fique o maior que puder dentro do container,
+     mas mostre-se INTEIRA. Se sobrar espaço, tudo bem, mas NÃO me corte
+     e NÃO mude minha proporção". */
+  object-fit: contain; 
+  
+  /* Garante que a foto fique centralizada */
+  display: block;
+}
+
+.cartao-informacao {
+  flex: 1.8; /* Ocupa mais espaço que a foto */
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.nome_produto {
+  font-size: 1.8em;
+  color: #2E2418;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+}
+
+descricao_produto {
+  font-size: 0.95em;
+  color: #4a3f35;
+  margin-bottom: 20px;
+}
+
+.preco_produto {
+  font-size: 1.6em;
+  color: #2E2418;
+  font-family: 'Georgia', serif;
+  margin-bottom: 25px;
+}
+
+/* --- BOTÕES --- */
+.botao_selecao {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.btn-classic {
+  flex: 1;
+  display: inline-block;
+  padding: 14px 10px;
+  background-color: #2E2418;
+  color: #F8ECD2;
+  font-size: 0.65em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  border-radius: 2px;
+}
+
+.btn-classic:hover {
+  background-color: #4a3f35;
+}
+
+.btn-premium {
+  flex: 1.3;
+  display: inline-block;
+  padding: 14px 10px;
+  background-color: #F3C4FC; /* Cor Malva para destaque profissional */
+  color: #2E2418;
+  font-size: 0.65em;
+  letter-spacing: 2px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  font-family: 'Georgia', serif;
+  border-radius: 2px;
+  border: 1px solid #C19A6B; /* Borda dourada sutil */
+}
+
+.btn-premium:hover {
+  background-color: #f7dfff;
+}
+
+/* --- PREVIEW INTERNO --- */
+.secao_paginas {
+  margin-top: 20px;
+  border-top: 1px solid rgba(46, 36, 24, 0.08);
+  padding-top: 20px;
+}
+
+.titulo_secao_paginas {
+  font-size: 0.65em;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-bottom: 15px;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.preview-section {
+  max-width: 250px;
+  max-height: 250px;
+  padding: 10px;
+  border-right-style: solid;
+  border-right-color: rgba(46, 36, 24, 0.5);
+  border-right-width: thin;
+}
+/* CONTAINER DO CARROSSEL */
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* O SCROLL COM 'SNAP' */
+.preview-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 0; /* Removido o gap para o snap ser exato */
+  padding-bottom: 5px;
+  border-left: #2E2418;
+  
+  /* MÁGICA DO SNAP: Faz o scroll grudar nas páginas */
+  scroll-snap-type: x mandatory; 
+  scroll-behavior: smooth;
+  
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.preview-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+/* CADA ITEM DA PÁGINA */
+.page-item {
+  min-width: 100%; /* Ocupa a largura total do container do card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Diz para o container grudar aqui */
+  scroll-snap-align: start; 
+  scroll-snap-stop: always;
+}
+
+.page-item img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain; /* Garante que não corte a página interna */
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  background: white;
+}
+
+/* ÍCONES DE SETAS */
+.scroll-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: black;
+  background-color: rgba(46, 36, 24, 0.2);
+  cursor: pointer; /* Garante que o cursor de mão apareça */
+  /* pointer-events: none;  <-- LINHA REMOVIDA PARA PERMITIR O CLIQUE */
+  z-index: 10;
+  transition: opacity 0.3s;
+  padding-bottom: 5px;
+}
+
+.arrow-left { left: 0; }
+.arrow-right { right: 0; }
+
+.carousel-container:hover .scroll-arrow {
+  opacity: 0.8;
+}
+
+/* LEGENDA DE AJUDA */
+.scroll-hint {
+  font-size: 0.6em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 10px;
+  opacity: 0.5;
+  text-align: center;
+}
+
+.scroll_secao_paginas {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding-bottom: 10px;
+  scrollbar-width: thin; /* Para Firefox */
+}
+
+/* Esconde a barra de rolagem horizontal no Chrome/Safari para um visual cleaner */
+.scroll_secao_paginas::-webkit-scrollbar {
+  height: 6px;
+}
+
+.scroll_secao_paginas::-webkit-scrollbar-thumb {
+  background-color: rgba(46, 36, 24, 0.2);
+  border-radius: 3px;
+}
+
+.scroll_secao_paginas {
+  -ms-overflow-style: none; /* Para IE/Edge antigo */
+}
+
+.pagina_secao_paginas {
+  min-width: 100px;
+  height: 125px;
+  background: white;
+  border: 1px solid rgba(46, 36, 24, 0.1);
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+.rodape_catalogo {
+  background-color: #2E2418;
+  color: #F8ECD2;
+  padding: 50px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(46, 36, 24, 0.3);
+}
+
+.link_rodape {
+  margin: 0;
+  font-size: 1em;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font-family: 'Cinzel', serif;
+}
+
+.creditos_rodape {
+  margin: 15px 0 0;
+  font-size: 0.8em;
+  opacity: 0.7;
+  letter-spacing: 1px;
+}
+
+/* --- RESPONSIVIDADE (MEDIA QUERIES) --- */
+@media (max-width: 768px) {
+  /* Ajustes para tablets e celulares grandes */
+  .cartao-informacao { padding: 30px; }
+  .container_principal { margin: 20px auto; width: 95%; }
+}
+
+@media (max-width: 576px) {
+  /* Ajustes específicos para celulares */
+  .cabecalho_catalogo { padding: 40px 15px; }
+  
+  .cartao_produto {
+    flex-direction: column; /* Empilha a foto sobre as informações */
+    min-height: auto;
+  }
+
+  .cartão_foto {
+    border-right: none;
+    border-bottom: 1px solid rgba(46, 36, 24, 0.1);
+    padding: 40px 20px; /* Mais preenchimento na foto empilhada */
+  }
+
+  .cartao-informacao {
+    padding: 30px 20px; /* Menor preenchimento lateral nas informações */
+  }
+
+  .nome_produto { font-size: 1.5em; }
+  .preco_produto { font-size: 1.4em; }
+
+  .botao_selecao {
+    flex-direction: column; /* Empilha os botões */
+    gap: 10px;
+  }
+
+  .btn-classic, .btn-premium {
+    width: 100%; /* Botões ocupam a largura total */
+    padding: 15px 10px; /* Ajuste no preenchimento do botão */
+    box-sizing: border-box;
+  }
+}

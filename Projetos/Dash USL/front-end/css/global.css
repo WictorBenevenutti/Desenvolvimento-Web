@@ -12,14 +12,14 @@ body {
     background-repeat: repeat-y, repeat-y;
     background-position: left 40px top 20px, right 40px top 40px;
     background-size: 10% auto;
+    min-height: 100vh;
 }
 
 .conteudo {
     min-width: 300px;
     max-width: 1000px;
-    min-height: 100vh;
+    min-height:  calc(100vh - 120px);
     margin: auto;
-    padding-top: 1px;
-    padding-bottom: 1px;
     background-color: white;
+    display: flow-root;
 }

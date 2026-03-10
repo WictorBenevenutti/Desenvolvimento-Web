@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo Memória em Papel</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+    <div class="container_principal">
+
+        <header class="cabecalho_catalogo">
+            <img src="assets/marca/Logotipo.png" alt="Logotipo Memória em Papel" class="logo-img">
+            <h1 class="titulo_cabecalho">Coleção Outono/Inverno</h1>
+            <div class="divisor_cabecalho"></div>
+            <p class="subtitulo_cabecalho">Eternizando histórias com excelência artesanal e sofisticação</p>
+        </header>
+
+        <main class="corpo_catalogo">
+            <div id="album_animais"></div>
+        </main>
+
+        <footer class="rodape_catalogo">
+            <p class="link_rodape">Memória em Papel</p>
+            <p class="creditos_rodape">Feito à mão com excelência artesanal em 2026</p>
+        </footer>
+
+    </div>
+
+    <script>
+        fetch('produtos/album_animais.html')
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById('album_animais').innerHTML = data;
+            });
+    </script>
+    <script>
+        fetch('produtos/album_fazendinha.html')
+            .then(res => res.text())
+            .then(data => {
+            document.getElementById('album_fazendinha').innerHTML = data;
+            });
+    </script>
+    <script>
+        // 1. OUVINTE GLOBAL DE CLIQUES
+        // Ele escuta qualquer clique na página inteira.
+        document.addEventListener('click', function(event) {
+            
+            // Verifica se o clique foi em uma seta (ou dentro dela)
+            const seta = event.target.closest('.scroll-arrow');
+            if (!seta) return; // Se não foi seta, ignora.
+
+            // 2. ENCONTRAR O CARROSSEL CORRETO
+            // A partir da seta, subimos até o container pai e descemos até o scroll.
+            const carouselContainer = seta.closest('.carousel-container');
+            if (!carouselContainer) return;
+
+            const scrollContainer = carouselContainer.querySelector('.preview-scroll');
+            if (!scrollContainer) return;
+
+            // 3. EXECUTAR A ROLAGEM
+            
+            // Descobre a direção: Direita (1), Esquerda (-1)
+            const direcao = seta.classList.contains('arrow-right') ? 1 : -1;
+            
+            // Descobre a largura de uma página (clientWidth pega a largura visível)
+            const larguraPagina = scrollContainer.firstElementChild.clientWidth;
+            
+            // Calcula a nova posição
+            const novaPosicao = scrollContainer.scrollLeft + (larguraPagina * direcao);
+            
+            // Rola suavemente
+            scrollContainer.scrollTo({
+                left: novaPosicao,
+                behavior: 'smooth' // Animação
+            });
+        });
+
+        // 2. FUNÇÃO GENÉRICA PARA CARREGAR PRODUTOS (FETCH)
+        function carregarProduto(url, containerId) {
+            fetch(url)
+                .then(res => res.text())
+                .then(data => {
+                    const container = document.getElementById(containerId);
+                    if (container) {
+                        container.innerHTML = data;
+                        // O ouvinte global acima cuidará dos cliques automaticamente.
+                    }
+                });
+        }
+
+        // 3. CARREGAR OS PRODUTOS
+        carregarProduto('produtos/album_animais.html', 'album_animais');
+        // Adicione outros quando criar os arquivos:
+        // carregarProduto('produtos/album_fazendinha.html', 'album_fazendinha'); 
+    </script>
+
+</body>
+</html>

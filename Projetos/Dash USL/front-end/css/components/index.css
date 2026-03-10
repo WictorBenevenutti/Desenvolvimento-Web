@@ -1,5 +1,5 @@
 .bloco {
-    margin: 40px 20px;
+    margin: 20px 20px;
     border-style: solid;
     border-width: thin;
     border-color: #BFBFBF;
@@ -38,6 +38,7 @@
 .item {
     width: 250px;
     height: auto;
+    min-height: 50px;
     margin: 20px 10px;
     padding: 5px;
     border-style: solid;
